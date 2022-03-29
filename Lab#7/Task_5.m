@@ -1,0 +1,16 @@
+n = -10:0.01:10;
+t1 = unitstep(n);
+t2 = unitstep(n-2);
+x = exp(n.*0.2).*t1;
+h = t2;
+y = conv(h,x);
+subplot(131);
+plot(n,x);
+title("x");
+subplot(132);
+plot(n,h);
+title("h");
+n1 = min(n)+min(n):0.01:max(n)+max(n);
+subplot(133);
+plot(n1,y);
+title("y");
